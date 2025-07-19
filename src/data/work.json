@@ -1,0 +1,20 @@
+[
+    {
+        "company": "Newfold Digital Inc.",
+        "position": "Software Engineer",
+        "date": "Jul. 2024 - Present",
+        "tasks": [
+            "Maintenance of a robust payment middleware system supporting multiple payment gateways, ensuring reliable and secure transaction processing for millions of users globally."
+        ]
+    },
+    {
+        "company": "Techforb LLC",
+        "position": "Software Engineer",
+        "date": "Mar. 2022 - Jul. 2024",
+        "tasks": [
+            "Solved production issues and made improvements in an existing Angular + Java application for the insurance industry.",
+            "Utilized Kubernetes CLI to debug containerized services and GitHub Actions to streamline CI/CD workflows.",
+            "Led the onboarding process for new developers, standardizing knowledge transfer and reducing ramp-up time."
+        ]
+    }
+]
