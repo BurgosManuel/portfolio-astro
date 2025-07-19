@@ -1,0 +1,53 @@
+
+[
+    {
+        "category": "Frontend",
+        "skills": [
+            {
+                "title": "HTML",
+                "icon": "html"
+            },
+            {
+                "title": "CSS",
+                "icon": "css"
+            },
+            {
+                "title": "TypeScript",
+                "icon": "typescript"
+            },
+            {
+                "title": "Angular",
+                "icon": "angular"
+            },
+            {
+                "title": "Astro",
+                "icon": "astro"
+            },
+            {
+                "title": "Bootstrap",
+                "icon": "bootstrap"
+            },
+            {
+                "title": "Tailwind CSS",
+                "icon": "tailwind"
+            }
+        ]
+    }, {
+        "category": "Backend",
+        "skills": [
+            {
+                "title": "Java",
+                "icon": "java"
+            },
+            {
+                "title": "Spring",
+                "icon": "spring"
+            },
+            {
+                "title": "SQL",
+                "icon": "sql"
+            }
+        ]
+    }
+
+]

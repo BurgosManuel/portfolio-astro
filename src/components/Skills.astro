@@ -1,0 +1,30 @@
+---
+import { Icon } from "astro-icon/components";
+import skillsData from "../data/skills.json";
+
+const skillSections: SkillSection[] = skillsData;
+---
+
+<section class="mx-auto max-w-screen-sm p-5">
+  <h2 class="text-xl font-semibold">🛠️ Skills</h2>
+
+  <div class="grid grid-cols-2 gap-2 text-center">
+    {
+      skillSections.map((section: SkillSection) => (
+        <div>
+          <h3 class="font-semibold">{section.category}</h3>
+          <div class="flex flex-wrap justify-center gap-2 mt-2">
+            {section.skills.map((skill: Skill) => (
+              <div class="tooltip" data-tip={skill.title}>
+                <Icon
+                  name={`${section.category.toLocaleLowerCase()}/${skill.icon}`}
+                  class="badge badge-outline badge-lg basis-1/3"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>

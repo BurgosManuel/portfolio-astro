@@ -3,9 +3,8 @@ import workData from '../data/work.json';
 import WorkEntry from './WorkEntry.astro';
 ---
 
-<main class="mx-auto max-w-screen-sm p-5">
-    <h1 class="text-xl font-semibold">💼 Work Experience</h1>
-    <div class="divider"></div>
+<section class="mx-auto max-w-screen-sm p-5 space-y-6">
+    <h2 class="text-xl font-semibold">💼 Work Experience</h2>
 
     { workData.map((job) => (
         <WorkEntry
@@ -15,4 +14,4 @@ import WorkEntry from './WorkEntry.astro';
             tasks={job.tasks}
         />
     ))}
-</main>
+</section>
