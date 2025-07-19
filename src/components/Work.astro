@@ -5,11 +5,10 @@ import WorkEntry from './WorkEntry.astro';
 
 <section class="mx-auto max-w-screen-sm p-5 space-y-6">
     <h2 class="text-xl font-semibold">💼 Work Experience</h2>
-
     { workData.map((job) => (
         <WorkEntry
             company={job.company}
-            date={job.date}
+            period={job.period}
             position={job.position}
             tasks={job.tasks}
         />
