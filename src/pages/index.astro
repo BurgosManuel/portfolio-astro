@@ -6,9 +6,11 @@ import Work from '../components/Work.astro';
 import Skills from '../components/Skills.astro';
 import Education from '../components/Education.astro';
 import Footer from '../components/Footer.astro';
+import PageSeo from '../components/PageSeo.astro';
 ---
 
 <Layout title='Manuel Burgos'>
+    <PageSeo slot="head"/>
     <About />
     <Work />
     <Skills />
