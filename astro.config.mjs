@@ -13,5 +13,7 @@ export default defineConfig({
 
   integrations: [icon({
     iconDir: 'public/assets/icons'
-  })]
+  })],
+
+  site: 'https://burgosmanuel.ar',
 });
