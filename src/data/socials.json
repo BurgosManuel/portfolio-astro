@@ -1,12 +1,17 @@
 [
     {
+        "name": "LinkedIn",
+        "icon": "linkedin",
+        "url": "https://linkedin.com/in/burgosmanuel-dev"
+    },
+    {
         "name": "GitHub",
         "icon": "github",
         "url": "https://github.com/BurgosManuel"
     },
     {
-        "name": "LinkedIn",
-        "icon": "linkedin",
-        "url": "https://linkedin.com/in/burgosmanuel-dev"
+        "name": "E-Mail",
+        "icon": "mail",
+        "url": "mailto:contact@burgosmanuel.ar"
     }
 ]
