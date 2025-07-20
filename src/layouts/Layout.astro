@@ -14,9 +14,9 @@ const { title } = Astro.props;
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<slot name="head">
 		<link rel="icon" type="image/x-icon" href="favicon.ico" />
 		<title>{title}</title>
+		<slot name="head"></slot>
 		<ClientRouter />
 	</head>
 	<body>
