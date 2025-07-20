@@ -16,4 +16,8 @@ export default defineConfig({
   })],
 
   site: 'https://burgosmanuel.ar',
+
+  build: {
+    assetsPrefix: './',
+  }
 });
