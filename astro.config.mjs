@@ -16,4 +16,5 @@ export default defineConfig({
   })],
 
   site: 'https://burgosmanuel.ar',
+  output: 'static'
 });
