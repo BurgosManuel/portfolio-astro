@@ -1,5 +1,6 @@
 interface Work {
     company: string;
+    companySite: string;
     period: string;
     position: string;
     tasks: string[];

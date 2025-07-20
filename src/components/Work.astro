@@ -8,6 +8,7 @@ import WorkEntry from './WorkEntry.astro';
     { workData.map((job) => (
         <WorkEntry
             company={job.company}
+            companySite={job.companySite}
             period={job.period}
             position={job.position}
             tasks={job.tasks}

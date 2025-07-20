@@ -1,6 +1,7 @@
 [
     {
         "company": "Newfold Digital Inc.",
+        "companySite": "https://www.newfold.com/",
         "position": "Software Engineer",
         "period": "Jul. 2024 - Present",
         "tasks": [
@@ -9,6 +10,7 @@
     },
     {
         "company": "Techforb LLC",
+        "companySite": "https://techforb.com/",
         "position": "Software Engineer",
         "period": "Mar. 2022 - Jul. 2024",
         "tasks": [
