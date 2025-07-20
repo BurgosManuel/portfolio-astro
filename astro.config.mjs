@@ -15,9 +15,6 @@ export default defineConfig({
     iconDir: 'public/assets/icons'
   })],
 
-  site: 'https://burgosmanuel.ar',
-
-  build: {
-    assetsPrefix: './',
-  }
+  site: 'https://burgosmanuel.github.io',
+  base: 'portfolio-astro',
 });
