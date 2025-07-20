@@ -1,7 +1,31 @@
+---
+import socialsData from '../data/socials.json';
+import { Icon } from 'astro-icon/components';
+---
+
 <main class="mx-auto max-w-screen-sm p-5 space-y-6">
-    <h2 class="text-xl font-semibold">Hi! 👋</h2>
-    <p>
-        I'm a software developer focused in web applications development and maintenance using technologies such as Angular, Java, Spring Boot & SQL. 
+  <section class="flex items-center justify-center gap-5 p-5 flex-wrap sm:flex-nowrap sm:justify-between">
+    <div class="avatar">
+      <div class="ring-neutral ring-offset-base-100 rounded-full ring-2 ring-offset-2 w-40">
+        <img
+          src="src/images/me-crop.webp"
+          alt="Manuel Burgos"
+        />
+      </div>
+    </div>
+    <div>
+      <h2 class="text-xl font-semibold">Hi! 👋</h2>
+      <p>
+        I’m a Software developer focused on web applications for technologies such as Angular, Java, Spring Boot & SQL. 
         I have solid experience working in collaborative environments under agile methodologies, with great adaptability for new projects and teams due to fast learning skills and effective communication.
-    </p>
+      </p>
+      <div class="flex items-center gap-4 mt-4">
+        {socialsData.map((social) => (
+          <a href={social.url} target="_blank" class="flex items-center gap-2">
+            <Icon name={`social/${social.icon}`} class="badge badge-outline badge-xl rounded-full border-2 hover:bg-info-content" />
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
 </main>

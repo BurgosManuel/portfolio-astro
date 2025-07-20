@@ -20,12 +20,12 @@
                 "icon": "angular"
             },
             {
-                "title": "Astro",
-                "icon": "astro"
-            },
-            {
                 "title": "Bootstrap",
                 "icon": "bootstrap"
+            },
+            {
+                "title": "Astro",
+                "icon": "astro"
             },
             {
                 "title": "Tailwind CSS",
@@ -46,6 +46,14 @@
             {
                 "title": "SQL",
                 "icon": "sql"
+            },
+            {
+                "title": "Docker",
+                "icon": "docker"
+            },
+            {
+                "title": "AWS",
+                "icon": "aws"
             }
         ]
     }
