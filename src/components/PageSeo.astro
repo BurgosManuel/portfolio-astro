@@ -1,21 +1,30 @@
 ---
 interface Props {
-  title: string;
+  title?: string;
 }
 
 const { title } = Astro.props;
 ---
-
+<title>{title || "Manuel Burgos | Software Engineer"}</title>
 <meta name="description" content="I’m Manuel, a software developer focused on web applications created with technologies such as Angular, Java, Spring Boot & SQL. I have solid experience working in collaborative environments under agile methodologies, with great adaptability for new projects and teams due to fast learning skills and effective communication.">
 <meta name="author" content="Manuel Burgos">
-<meta name="keywords" content="portfolio, web development, software developer, Angular, Java, Spring Boot, SQL, agile methodologies">
-<meta property="og:title" content={title}>
+<meta name="keywords" content="portfolio, web development, software developer, Angular, Java, Spring Boot, SQL, agile methodologies,Manuel, Burgos, Manuel Burgos, burgosmanuel, burgosmanuel.ar">
+<meta property="og:title" content={title || "Manuel Burgos | Software Engineer"}>
 <meta property="og:description" content="I’m Manuel, a software developer focused on web applications created with technologies such as Angular, Java, Spring Boot & SQL. I have solid experience working in collaborative environments under agile methodologies, with great adaptability for new projects and teams due to fast learning skills and effective communication.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_US">
 <meta property="og:url" content="https://burgosmanuel.ar">
 <meta property="og:image" content="/assets/images/me-crop.webp">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content={title}>
+<meta name="twitter:title" content={title || "Manuel Burgos | Software Engineer"}>
 <meta name="twitter:description" content="I’m Manuel, a software developer focused on web applications created with technologies such as Angular, Java, Spring Boot & SQL. I have solid experience working in collaborative environments under agile methodologies, with great adaptability for new projects and teams due to fast learning skills and effective communication.">
 <meta name="twitter:image" content="/assets/images/me-crop.webp">
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Manuel Burgos",
+    "alternateName": ["Manuel Burgos - Software Engineer"],
+    "url": "https://burgosmanuel.ar/"
+  }
+</script>
