@@ -4,6 +4,13 @@ interface Props {
 }
 
 const { title } = Astro.props;
+const structuredData = `
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Manuel Burgos",
+  "url": "https://burgosmanuel.ar/"
+}`
 ---
 <title>{title || "Manuel Burgos | Software Engineer"}</title>
 <meta name="description" content="I’m Manuel, a software developer focused on web applications created with technologies such as Angular, Java, Spring Boot & SQL. I have solid experience working in collaborative environments under agile methodologies, with great adaptability for new projects and teams due to fast learning skills and effective communication.">
@@ -20,11 +27,4 @@ const { title } = Astro.props;
 <meta name="twitter:title" content={title || "Manuel Burgos | Software Engineer"}>
 <meta name="twitter:description" content="I’m Manuel, a software developer focused on web applications created with technologies such as Angular, Java, Spring Boot & SQL. I have solid experience working in collaborative environments under agile methodologies, with great adaptability for new projects and teams due to fast learning skills and effective communication.">
 <meta name="twitter:image" content="/assets/images/me-crop.webp">
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Manuel Burgos",
-    "url": "https://burgosmanuel.ar/"
-  }
-</script>
+<script type="application/ld+json" set:html="structuredData" is:inline></script>
