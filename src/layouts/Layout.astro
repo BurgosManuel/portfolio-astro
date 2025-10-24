@@ -10,8 +10,16 @@ import "../styles/global.css";
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/x-icon" href="favicon.ico" />
 		<slot name="head">
-			<title>Manuel Burgos | Software Engineer</title>
+			<title>Manuel Burgos | Software Engineer</title>			
 		</slot>
+		<script type="application/ld+json">
+  		{
+    		"@context": "https://schema.org",
+    		"@type": "WebSite",
+    		"name": "Manuel Burgos",
+    		"url": "https://burgosmanuel.ar/"
+  		}
+</script>
 		<ClientRouter />
 	</head>
 	<body>
