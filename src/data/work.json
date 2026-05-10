@@ -12,7 +12,7 @@
         "company": "Techforb LLC",
         "companySite": "https://techforb.com/",
         "position": "Software Engineer",
-        "period": "Mar. 2022 - Jul. 2024",
+        "period": "Sep. 2022 - Jul. 2024",
         "tasks": [
             "Solved production issues and made improvements in an existing Angular + Java application for the insurance industry.",
             "Utilized Kubernetes CLI to debug containerized services and GitHub Actions to streamline CI/CD workflows.",
