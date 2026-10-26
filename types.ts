@@ -1,9 +1,14 @@
+interface WorkRole {
+    position: string;
+    period: string;
+    tasks: string[];
+}
+
 interface Work {
     company: string;
     companySite: string;
     period: string;
-    position: string;
-    tasks: string[];
+    roles: WorkRole[];
 }
 
 interface Skill {

@@ -2,21 +2,40 @@
     {
         "company": "Newfold Digital Inc.",
         "companySite": "https://www.newfold.com/",
-        "position": "Software Engineer",
         "period": "Jul. 2024 - Present",
-        "tasks": [
-            "Maintenance of a robust payment middleware system supporting multiple payment gateways, ensuring reliable and secure transaction processing for millions of users globally."
+        "roles": [
+            {
+                "position": "Senior Software Engineer",
+                "period": "Apr. 2026 - Present",
+                "tasks": [
+                    "Engineered and integrated an AI-powered code review agent into our CI/CD pipeline using Python and the Cursor SDK, providing instant feedback on daily pull request evaluations.",
+                    "Designed the core architecture for a scalable Java-based messaging application, utilizing event-driven design, asynchronous message queues, and publish/subscribe patterns to ensure high throughput and low-latency delivery.",
+                    "Maintained strict PCI compliance for payment systems by upgrading technical infrastructure and integrating automated security scans to meet industry payment requirements."
+                ]
+            },
+            {
+                "position": "Software Engineer",
+                "period": "Jul. 2024 - Apr. 2026",
+                "tasks": [
+                    "Expanded payment options for over 3 million users by integrating digital wallets (Apple Pay and Google Pay) into the core payments infrastructure for premier domain registration and web hosting brands, including Bluehost and Network Solutions.",
+                    "Enhanced our security services to prevent payment fraud and account takeovers (ATO), resolving critical defects to improve the customer checkout experience."
+                ]
+            }
         ]
     },
     {
-        "company": "Techforb LLC",
+        "company": "TechForb LLC",
         "companySite": "https://techforb.com/",
-        "position": "Software Engineer",
-        "period": "Sep. 2022 - Jul. 2024",
-        "tasks": [
-            "Solved production issues and made improvements in an existing Angular + Java application for the insurance industry.",
-            "Utilized Kubernetes CLI to debug containerized services and GitHub Actions to streamline CI/CD workflows.",
-            "Led the onboarding process for new developers, standardizing knowledge transfer and reducing ramp-up time."
+        "period": "Mar. 2022 - Jul. 2024",
+        "roles": [
+            {
+                "position": "Fullstack Developer",
+                "period": "Mar. 2022 - Jul. 2024",
+                "tasks": [
+                    "Engineered and delivered core features for AVLA's enterprise insurance platform using Java and Angular, supporting operations for over 6,000 active clients across LATAM and the US.",
+                    "Led knowledge transfer initiatives across the engineering department, standardizing onboarding workflows to accelerate developer ramp-up time."
+                ]
+            }
         ]
     }
 ]

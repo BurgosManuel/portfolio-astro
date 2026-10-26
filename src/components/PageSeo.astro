@@ -4,6 +4,7 @@ interface Props {
 }
 
 const { title } = Astro.props;
+const description = "Senior Software Engineer specializing in scalable backend systems and robust cloud infrastructure. I deliver end-to-end enterprise solutions while integrating AI tooling to optimize development efficiency. I have solid experience working in collaborative, agile environments, bringing strong adaptability to new projects and teams through fast learning and effective communication.";
 const structuredData = `
 {
   "@context": "https://schema.org",
@@ -13,11 +14,11 @@ const structuredData = `
 }`
 ---
 <title>{title || "Manuel Burgos | Software Engineer"}</title>
-<meta name="description" content="I’m Manuel, a software developer focused on web applications created with technologies such as Angular, Java, Spring Boot & SQL. I have solid experience working in collaborative environments under agile methodologies, with great adaptability for new projects and teams due to fast learning skills and effective communication.">
+<meta name="description" content={description}>
 <meta name="author" content="Manuel Burgos">
-<meta name="keywords" content="portfolio, web development, software developer, Angular, Java, Spring Boot, SQL, agile methodologies,Manuel, Burgos, Manuel Burgos, burgosmanuel, burgosmanuel.ar">
+<meta name="keywords" content="portfolio, software engineer, Java, Spring Boot, Angular, AWS, Python, payments,Manuel, Burgos, Manuel Burgos, burgosmanuel, burgosmanuel.ar">
 <meta property="og:title" content={title || "Manuel Burgos | Software Engineer"}>
-<meta property="og:description" content="I’m Manuel, a software developer focused on web applications created with technologies such as Angular, Java, Spring Boot & SQL. I have solid experience working in collaborative environments under agile methodologies, with great adaptability for new projects and teams due to fast learning skills and effective communication.">
+<meta property="og:description" content={description}>
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_US">
 <meta property="og:url" content="https://burgosmanuel.ar">
@@ -25,6 +26,6 @@ const structuredData = `
 <meta property="og:site_name" content="Manuel Burgos" />
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content={title || "Manuel Burgos | Software Engineer"}>
-<meta name="twitter:description" content="I’m Manuel, a software developer focused on web applications created with technologies such as Angular, Java, Spring Boot & SQL. I have solid experience working in collaborative environments under agile methodologies, with great adaptability for new projects and teams due to fast learning skills and effective communication.">
+<meta name="twitter:description" content={description}>
 <meta name="twitter:image" content="/assets/images/me-crop.webp">
 <script type="application/ld+json" set:html={structuredData} is:inline></script>
