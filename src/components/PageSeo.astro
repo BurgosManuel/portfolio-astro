@@ -1,31 +1,150 @@
 ---
 interface Props {
   title?: string;
+  description?: string;
+  image?: string;
+  canonicalUrl?: string;
+  noindex?: boolean;
 }
 
-const { title } = Astro.props;
-const description = "🙋 Hi! I'm Manuel, a software engineer focused on building enterprise software. With experience across the insurance and payments sectors, I prioritize understanding business constraints to deliver reliable, high-quality systems. I'm primarily backend-focused (Java, Spring), but I regularly ship end-to-end solutions using Angular. I'm also currently pursuing my degree in Systems Engineering.";
-const structuredData = `
-{
+const {
+  title = "Sergio Manuel Burgos | Senior Software Engineer",
+  description = "🙋 Hi! I'm Manuel, a software engineer focused on building enterprise software. With experience across the insurance and payments sectors, I prioritize understanding business constraints to deliver reliable, high-quality systems. I'm primarily backend-focused (Java, Spring), but I regularly ship end-to-end solutions using Angular. I'm also currently pursuing my degree in Systems Engineering.",
+  image = "https://burgosmanuel.ar/assets/images/og-card.png",
+  canonicalUrl = Astro.url.href,
+  noindex = false,
+} = Astro.props;
+
+const siteName = "Sergio Manuel Burgos";
+const siteUrl = "https://burgosmanuel.ar";
+const absoluteImageUrl = image.startsWith("http") ? image : new URL(image, siteUrl).toString();
+
+const schemaGraph = {
   "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Sergio Manuel Burgos",
-  "url": "https://burgosmanuel.ar/"
-}`
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://burgosmanuel.ar/#website",
+      "url": "https://burgosmanuel.ar/",
+      "name": "Sergio Manuel Burgos",
+      "description": description,
+      "publisher": {
+        "@id": "https://burgosmanuel.ar/#person"
+      },
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "https://burgosmanuel.ar/#webpage",
+      "url": "https://burgosmanuel.ar/",
+      "name": title,
+      "isPartOf": {
+        "@id": "https://burgosmanuel.ar/#website"
+      },
+      "about": {
+        "@id": "https://burgosmanuel.ar/#person"
+      },
+      "mainEntity": {
+        "@id": "https://burgosmanuel.ar/#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://burgosmanuel.ar/#person",
+      "name": "Sergio Manuel Burgos",
+      "alternateName": ["Manuel Burgos", "Burgos Manuel"],
+      "jobTitle": "Senior Software Engineer",
+      "description": description,
+      "url": "https://burgosmanuel.ar/",
+      "image": "https://burgosmanuel.ar/assets/images/me-crop.webp",
+      "email": "mailto:contact@burgosmanuel.ar",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Tucumán",
+        "addressCountry": "AR"
+      },
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Universidad Tecnológica Nacional",
+        "url": "https://www.utn.edu.ar/"
+      },
+      "worksFor": [
+        {
+          "@type": "Organization",
+          "name": "Newfold Digital Inc.",
+          "url": "https://www.newfold.com/"
+        }
+      ],
+      "sameAs": [
+        "https://linkedin.com/in/burgosmanuel-dev",
+        "https://github.com/BurgosManuel"
+      ],
+      "knowsAbout": [
+        "Backend Architecture",
+        "Java",
+        "Spring Boot",
+        "Microservices",
+        "Apache Kafka",
+        "Redis",
+        "SQL",
+        "Angular",
+        "TypeScript",
+        "AWS (Amazon Web Services)",
+        "Docker",
+        "CI/CD (GitHub Actions, Jenkins)",
+        "AI Agent Tooling",
+        "Payment Systems"
+      ]
+    }
+  ]
+};
 ---
-<title>{title || "Sergio Manuel Burgos | Senior Software Engineer"}</title>
-<meta name="description" content={description}>
-<meta name="author" content="Sergio Manuel Burgos">
-<meta name="keywords" content="portfolio, senior software engineer, Java, Spring Boot, SQL, Microservices, Apache Kafka, Redis, Angular, TypeScript, JavaScript, AWS, Docker, GitHub Actions, Jenkins, Python, AI, Sergio Manuel Burgos, Manuel Burgos, burgosmanuel, burgosmanuel.ar">
-<meta property="og:title" content={title || "Sergio Manuel Burgos | Senior Software Engineer"}>
-<meta property="og:description" content={description}>
-<meta property="og:type" content="website">
-<meta property="og:locale" content="en_US">
-<meta property="og:url" content="https://burgosmanuel.ar">
-<meta property="og:image" content="/assets/images/me-crop.webp">
-<meta property="og:site_name" content="Sergio Manuel Burgos" />
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content={title || "Sergio Manuel Burgos | Senior Software Engineer"}>
-<meta name="twitter:description" content={description}>
-<meta name="twitter:image" content="/assets/images/me-crop.webp">
-<script type="application/ld+json" set:html={structuredData} is:inline></script>
+
+<!-- Primary Meta Tags -->
+<title>{title}</title>
+<meta name="title" content={title} />
+<meta name="description" content={description} />
+<meta name="author" content="Sergio Manuel Burgos" />
+<meta name="keywords" content="Sergio Manuel Burgos, Manuel Burgos, Senior Software Engineer, Software Engineer, Java, Spring Boot, SQL, Microservices, Apache Kafka, Redis, Angular, TypeScript, AWS, Docker, GitHub Actions, Jenkins, Python, AI, Tucumán, Argentina, portfolio, burgosmanuel" />
+<link rel="canonical" href={canonicalUrl} />
+{noindex ? (
+  <meta name="robots" content="noindex, nofollow" />
+) : (
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+)}
+
+<!-- Color Scheme & Theme Color (Slack / Discord / Mobile Browsers) -->
+<meta name="theme-color" content="#1D4ED8" />
+<meta name="color-scheme" content="light" />
+
+<!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
+<meta property="og:type" content="profile" />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:site_name" content={siteName} />
+<meta property="og:locale" content="en_US" />
+<meta property="og:image" content={absoluteImageUrl} />
+<meta property="og:image:secure_url" content={absoluteImageUrl} />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Sergio Manuel Burgos — Senior Software Engineer Portfolio" />
+
+<!-- Twitter / X / Slack Cards -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content={canonicalUrl} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={absoluteImageUrl} />
+<meta name="twitter:image:alt" content="Sergio Manuel Burgos — Senior Software Engineer Portfolio" />
+
+<!-- Additional Social & Mobile Hints -->
+<meta name="application-name" content="Manuel Burgos" />
+<meta name="apple-mobile-web-app-title" content="Manuel Burgos" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<meta name="format-detection" content="telephone=no" />
+
+<!-- Structured Data (JSON-LD) -->
+<script type="application/ld+json" set:html={JSON.stringify(schemaGraph)} is:inline />

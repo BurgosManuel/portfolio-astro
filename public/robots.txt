@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://burgosmanuel.ar/sitemap-index.xml

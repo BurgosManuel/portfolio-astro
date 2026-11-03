@@ -1,7 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import PageSeo from "../components/PageSeo.astro";
 ---
 <Layout>
+    <PageSeo title="404 - Not Found | Sergio Manuel Burgos" noindex={true} slot="head" />
     <main>
         <article class="nb-card p-10 flex items-center justify-center flex-col text-center space-y-4">
             <span class="nb-badge text-xs px-3 py-1">Error 404</span>
