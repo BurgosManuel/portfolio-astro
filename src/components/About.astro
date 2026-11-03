@@ -3,31 +3,49 @@ import socialsData from '../data/socials.json';
 import { Icon } from 'astro-icon/components';
 ---
 
-<main class="mx-auto max-w-screen-sm p-5 space-y-6">
-  <section class="flex items-center justify-center gap-5 p-5 flex-wrap sm:flex-nowrap sm:justify-between">
-    <div class="avatar">
-      <div class="ring-neutral ring-offset-base-100 rounded-full ring-2 ring-offset-2 w-40">
+<main>
+  <section class="nb-card p-6">
+    <div class="flex flex-col sm:flex-row gap-6 items-center sm:items-start">
+      <div class="w-28 h-28 rounded-md shrink-0 overflow-hidden" style="background: var(--nb-subtle); border: 2px solid var(--nb-border); box-shadow: 3px 3px 0px 0px var(--nb-shadow);">
         <img
           src="/assets/images/me-crop.webp"
-          alt="Manuel Burgos"
+          alt="Sergio Manuel Burgos"
+          class="w-full h-full object-cover"
         />
       </div>
-    </div>
-    <div class="text-justify">
-      <h2 class="text-xl font-semibold">Hi! 👋</h2>
-      <p>
-        I'm Manuel, Senior Software Engineer specializing in scalable backend systems and robust cloud infrastructure. I deliver end-to-end enterprise solutions while integrating AI tooling to optimize development efficiency.
-      </p>
-      <p class="mt-2">
-        I have solid experience working in collaborative, agile environments, bringing strong adaptability to new projects and teams through fast learning and effective communication.
-      </p>
-      <div class="flex items-center gap-4 mt-4">
-        <span class="font-semibold">Contact me on:</span>
-        {socialsData.map((social) => (
-          <a href={social.url} target="_blank" class="flex items-center gap-2">
-            <Icon name={`social/${social.icon}`} class="badge badge-outline badge-xl rounded-full border-2 hover:bg-info-content" />
-          </a>
-        ))}
+
+      <div class="flex-1 space-y-3">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <h2 class="text-2xl font-bold tracking-tight">🙋 Hi!</h2>
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="nb-badge text-xs px-2.5 py-1">Senior Software Engineer</span>
+            <span class="nb-badge text-xs px-2.5 py-1 inline-flex items-center gap-1">
+              <Icon name="ui/map-pin" class="w-3.5 h-3.5 text-[#1D4ED8]" />
+              <span>Tucumán, Argentina</span>
+            </span>
+          </div>
+        </div>
+
+        <p class="text-sm leading-relaxed" style="color: var(--nb-muted);">
+          I'm Manuel, a software engineer focused on building enterprise software. With experience across the insurance and payments sectors, I prioritize understanding business constraints to deliver reliable, high-quality systems. I'm primarily backend-focused (Java, Spring), but I regularly ship end-to-end solutions using Angular.
+        </p>
+        <p class="text-sm leading-relaxed" style="color: var(--nb-muted);">
+          I'm also currently pursuing my degree in Systems Engineering.
+        </p>
+
+        <div class="pt-2 flex flex-wrap items-center gap-2.5">
+          {socialsData.map((social) => (
+            <a
+              href={social.url}
+              target={social.url.startsWith('http') ? '_blank' : undefined}
+              rel={social.url.startsWith('http') ? 'noopener noreferrer' : undefined}
+              class="nb-btn px-3.5 py-1.5 text-xs inline-flex items-center gap-1.5"
+            >
+              <Icon name={social.icon} class="w-4 h-4 shrink-0" style={`color: ${social.color}`} />
+              <span>{social.name}</span>
+            </a>
+          ))}
+        </div>
       </div>
     </div>
   </section>

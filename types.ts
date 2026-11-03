@@ -1,6 +1,6 @@
 interface WorkRole {
     position: string;
-    period: string;
+    period?: string;
     tasks: string[];
 }
 
@@ -14,6 +14,7 @@ interface Work {
 interface Skill {
     title: string;
     icon: string;
+    color?: string;
 }
 
 interface SkillSection {

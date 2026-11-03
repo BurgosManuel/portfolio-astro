@@ -4,32 +4,56 @@ import { Icon } from 'astro-icon/components';
 interface Props extends Work {}
 
 const { company, companySite, period, roles }: Props = Astro.props;
-const multiple = roles.length > 1;
+const [firstRole, ...otherRoles] = roles;
 ---
-<article>
-        <header class="flex flex-col items-left gap-3 justify-between flex-wrap sm:flex-row sm:items-center">
-            <aside>
-                <a href={companySite} target="_blank">
-                    <h3 class="font-semibold inline">{company}</h3>
-                    <Icon name="external-link" class="inline"/>
-                </a>
-                {!multiple && <p class="text-sm font-light">{roles[0].position}</p>}
-            </aside>
-            <p class="text-sm">{period}</p>
-        </header>
-        {roles.map((role) => (
-            <section class="mt-3">
-                {multiple && (
-                    <div class="flex flex-col gap-1 justify-between sm:flex-row sm:items-center">
-                        <p class="text-sm font-light">{role.position}</p>
-                        <p class="text-sm">{role.period}</p>
-                    </div>
+<article class="nb-card p-6">
+    <header class="flex flex-wrap items-center justify-between gap-2 pb-4 border-b-2 border-[var(--nb-border)]">
+        <div>
+            <a
+                href={companySite}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-1.5 hover:underline"
+            >
+                <h3 class="text-lg font-bold">{company}</h3>
+                <Icon name="external-link" class="w-4 h-4 text-[#1D4ED8]" />
+            </a>
+            {firstRole && (
+                <p class="text-xs font-semibold mt-0.5" style="color: var(--nb-muted);">
+                    {firstRole.position}
+                </p>
+            )}
+        </div>
+        <span class="nb-badge text-xs px-2.5 py-1">
+            {firstRole?.period || period}
+        </span>
+    </header>
+
+    {firstRole && (
+        <ul class="mt-4 space-y-2 text-sm leading-relaxed list-disc pl-5" style="color: var(--nb-muted);">
+            {firstRole.tasks.map((task) => (
+                <li>{task}</li>
+            ))}
+        </ul>
+    )}
+
+    {otherRoles.map((role) => (
+        <div class="mt-5 pt-4 border-t-2 border-dashed border-[var(--nb-border)]">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+                <p class="text-xs font-semibold" style="color: var(--nb-muted);">
+                    {role.position}
+                </p>
+                {role.period && (
+                    <span class="nb-badge text-xs px-2.5 py-1">
+                        {role.period}
+                    </span>
                 )}
-                <ul class="mt-3 list-disc pl-5">
-                    {role.tasks.map((task) => (
-                        <li class="py-2">{task}</li>
-                    ))}
-                </ul>
-            </section>
-        ))}
+            </div>
+            <ul class="mt-3 space-y-2 text-sm leading-relaxed list-disc pl-5" style="color: var(--nb-muted);">
+                {role.tasks.map((task) => (
+                    <li>{task}</li>
+                ))}
+            </ul>
+        </div>
+    ))}
 </article>

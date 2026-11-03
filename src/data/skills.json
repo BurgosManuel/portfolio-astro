@@ -1,61 +1,142 @@
-
 [
     {
-        "category": "Frontend",
-        "skills": [
-            {
-                "title": "HTML",
-                "icon": "html"
-            },
-            {
-                "title": "CSS",
-                "icon": "css"
-            },
-            {
-                "title": "TypeScript",
-                "icon": "typescript"
-            },
-            {
-                "title": "Angular",
-                "icon": "angular"
-            },
-            {
-                "title": "Bootstrap",
-                "icon": "bootstrap"
-            },
-            {
-                "title": "Astro",
-                "icon": "astro"
-            },
-            {
-                "title": "Tailwind CSS",
-                "icon": "tailwind"
-            }
-        ]
-    }, {
         "category": "Backend",
         "skills": [
             {
                 "title": "Java",
-                "icon": "java"
+                "icon": "backend/java",
+                "color": "#E76F00"
             },
             {
-                "title": "Spring",
-                "icon": "spring"
+                "title": "Spring Boot",
+                "icon": "backend/spring",
+                "color": "#6DB33F"
             },
             {
                 "title": "SQL",
-                "icon": "sql"
+                "icon": "backend/sql",
+                "color": "#0284C7"
+            },
+            {
+                "title": "Microservices",
+                "icon": "backend/microservices",
+                "color": "#4F46E5"
+            },
+            {
+                "title": "Apache Kafka",
+                "icon": "backend/kafka",
+                "color": "#0F766E"
+            },
+            {
+                "title": "Redis",
+                "icon": "backend/redis",
+                "color": "#DC382D"
+            }
+        ]
+    },
+    {
+        "category": "Frontend",
+        "skills": [
+            {
+                "title": "Angular",
+                "icon": "frontend/angular",
+                "color": "#DD0031"
+            },
+            {
+                "title": "TypeScript",
+                "icon": "frontend/typescript",
+                "color": "#3178C6"
+            },
+            {
+                "title": "JavaScript",
+                "icon": "frontend/javascript",
+                "color": "#D97706"
+            },
+            {
+                "title": "HTML",
+                "icon": "frontend/html",
+                "color": "#E34F26"
+            },
+            {
+                "title": "CSS",
+                "icon": "frontend/css",
+                "color": "#1572B6"
+            }
+        ]
+    },
+    {
+        "category": "Cloud & DevOps",
+        "skills": [
+            {
+                "title": "AWS (EC2, S3, Lambda, SQS, SNS, CloudFormation)",
+                "icon": "backend/aws",
+                "color": "#FF9900"
             },
             {
                 "title": "Docker",
-                "icon": "docker"
+                "icon": "backend/docker",
+                "color": "#2496ED"
             },
             {
-                "title": "AWS",
-                "icon": "aws"
+                "title": "GitHub Actions",
+                "icon": "backend/github-actions",
+                "color": "#2088FF"
+            },
+            {
+                "title": "Jenkins",
+                "icon": "backend/jenkins",
+                "color": "#D33833"
+            }
+        ]
+    },
+    {
+        "category": "AI",
+        "skills": [
+            {
+                "title": "Python",
+                "icon": "ai/python",
+                "color": "#3776AB"
+            },
+            {
+                "title": "Agent SDKs",
+                "icon": "ai/agent-sdk",
+                "color": "#7C3AED"
+            },
+            {
+                "title": "Skills",
+                "icon": "ai/skills",
+                "color": "#0284C7"
+            },
+            {
+                "title": "SDD",
+                "icon": "ai/sdd",
+                "color": "#0D9488"
+            },
+            {
+                "title": "RPI",
+                "icon": "ai/rpi",
+                "color": "#2563EB"
+            },
+            {
+                "title": "Agentic IDEs (Cursor, Antigravity, etc.)",
+                "icon": "ai/agentic-ide",
+                "color": "#4F46E5"
+            }
+        ]
+    },
+    {
+        "category": "Languages",
+        "skills": [
+            {
+                "title": "English (C1 - Advanced)",
+                "icon": "languages/english",
+                "color": "#1D4ED8"
+            },
+            {
+                "title": "Spanish (Native)",
+                "icon": "languages/spanish",
+                "color": "#0F766E"
             }
         ]
     }
-
 ]

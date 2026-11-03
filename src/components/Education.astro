@@ -1,15 +1,21 @@
 ---
-import educationData from '../data/education.json'
+import { Icon } from 'astro-icon/components';
+import educationData from '../data/education.json';
 import EducationEntry from './EducationEntry.astro';
 ---
-<section class="mx-auto max-w-screen-sm p-5 space-y-6">
-    <h2 class="text-xl font-semibold">🎓 Education</h2>
+<section class="space-y-4">
+    <div class="flex items-center gap-2.5">
+        <span class="nb-badge p-1.5 inline-flex items-center justify-center">
+            <Icon name="ui/school" class="w-4 h-4 text-[#1D4ED8]" />
+        </span>
+        <h2 class="text-xl font-bold tracking-tight">Education</h2>
+    </div>
     { educationData.map((edu)=> (
         <EducationEntry
-        institution={edu.institution}
-        period={edu.period}
-        degree={edu.degree}
-        description={edu.description}
+            institution={edu.institution}
+            period={edu.period}
+            degree={edu.degree}
+            description={edu.description}
         />
     ))}
 </section>

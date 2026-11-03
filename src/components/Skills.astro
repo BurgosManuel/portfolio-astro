@@ -5,22 +5,38 @@ import skillsData from "../data/skills.json";
 const skillSections: SkillSection[] = skillsData;
 ---
 
-<section class="mx-auto max-w-screen-sm p-5">
-  <h2 class="text-xl font-semibold">🛠️ Skills</h2>
+<section class="space-y-4">
+  <div class="flex items-center gap-2.5">
+    <span class="nb-badge p-1.5 inline-flex items-center justify-center">
+      <Icon name="ui/code" class="w-4 h-4 text-[#1D4ED8]" />
+    </span>
+    <h2 class="text-xl font-bold tracking-tight">Skills</h2>
+  </div>
 
-  <div class="grid sm:grid-cols-2 gap-5 text-center">
+  <div class="grid sm:grid-cols-2 gap-4">
     {
-      skillSections.map((section: SkillSection) => (
-        <div>
-          <h3 class="font-semibold">{section.category}</h3>
-          <div class="flex flex-wrap justify-center gap-2 mt-2">
+      skillSections.map((section: SkillSection, index: number) => (
+        <div
+          class:list={[
+            "nb-card p-5",
+            index === skillSections.length - 1 && skillSections.length % 2 !== 0
+              ? "sm:col-span-2"
+              : "",
+          ]}
+        >
+          <h3 class="text-sm font-bold pb-2.5 mb-3 border-b-2 border-[var(--nb-border)]">
+            {section.category}
+          </h3>
+          <div class="flex flex-wrap gap-2">
             {section.skills.map((skill: Skill) => (
-              <div class="tooltip sm:basis-1/4" data-tip={skill.title}>
+              <span class="nb-btn px-3 py-1.5 text-xs inline-flex items-center gap-1.5 text-left">
                 <Icon
-                  name={`${section.category.toLocaleLowerCase()}/${skill.icon}`}
-                  class="badge badge-outline badge-xl rounded-full border-2 hover:bg-info-content cursor-pointer"
+                  name={skill.icon}
+                  class="w-4 h-4 shrink-0"
+                  style={skill.color ? `color: ${skill.color}` : undefined}
                 />
-              </div>
+                <span>{skill.title}</span>
+              </span>
             ))}
           </div>
         </div>

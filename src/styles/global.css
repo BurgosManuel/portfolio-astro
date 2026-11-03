@@ -1,4 +1,101 @@
 @import "tailwindcss";
-@plugin "daisyui" {
-    themes: retro --default
+
+:root {
+  color-scheme: light;
+  --nb-bg: #EEF2F6;
+  --nb-card: #FFFFFF;
+  --nb-subtle: #DCE4EE;
+  --nb-accent: #1D4ED8;
+  --nb-accent-fg: #FFFFFF;
+  --nb-secondary: #0F766E;
+  --nb-highlight: #D97706;
+  --nb-ink: #111827;
+  --nb-muted: #4B5563;
+  --nb-border: #111827;
+  --nb-shadow: #111827;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--nb-bg);
+    color: var(--nb-ink);
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100%;
+    background-color: var(--nb-bg);
+    color: var(--nb-ink);
+    text-align: start;
+  }
+
+  p,
+  li {
+    text-wrap: pretty;
+    overflow-wrap: break-word;
+  }
+}
+
+@layer components {
+  .nb-card {
+    background-color: var(--nb-card);
+    border: 2px solid var(--nb-border);
+    box-shadow: 4px 4px 0px 0px var(--nb-shadow);
+    border-radius: 6px;
+  }
+
+  .nb-btn {
+    background-color: var(--nb-card);
+    color: var(--nb-ink);
+    border: 2px solid var(--nb-border);
+    box-shadow: 3px 3px 0px 0px var(--nb-shadow);
+    border-radius: 6px;
+    font-weight: 600;
+    transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.12s ease;
+    cursor: pointer;
+  }
+
+  .nb-btn:hover:not(:disabled) {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0px 0px var(--nb-shadow);
+    background-color: var(--nb-subtle);
+  }
+
+  .nb-btn:active:not(:disabled) {
+    transform: translate(3px, 3px);
+    box-shadow: 0px 0px 0px 0px var(--nb-shadow);
+  }
+
+  .nb-btn-primary {
+    background-color: var(--nb-accent);
+    color: var(--nb-accent-fg);
+  }
+
+  .nb-btn-primary:hover:not(:disabled) {
+    background-color: var(--nb-accent);
+    filter: brightness(1.08);
+  }
+
+  .nb-badge {
+    background-color: var(--nb-subtle);
+    color: var(--nb-ink);
+    border: 2px solid var(--nb-border);
+    border-radius: 5px;
+    font-weight: 600;
+  }
+}
+
+@media (forced-colors: active) {
+  .nb-card,
+  .nb-btn,
+  .nb-badge {
+    border: 2px solid CanvasText;
+  }
+  .nb-btn:focus-visible,
+  .nb-btn:hover:not(:disabled) {
+    outline: 2px solid Highlight;
+  }
 }

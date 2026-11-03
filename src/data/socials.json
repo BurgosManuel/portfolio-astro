@@ -1,17 +1,20 @@
 [
     {
         "name": "LinkedIn",
-        "icon": "linkedin",
-        "url": "https://linkedin.com/in/burgosmanuel-dev"
+        "icon": "social/linkedin",
+        "url": "https://linkedin.com/in/burgosmanuel-dev",
+        "color": "#0A66C2"
     },
     {
         "name": "GitHub",
-        "icon": "github",
-        "url": "https://github.com/BurgosManuel"
+        "icon": "social/github",
+        "url": "https://github.com/BurgosManuel",
+        "color": "#6E5494"
     },
     {
         "name": "E-Mail",
-        "icon": "mail",
-        "url": "mailto:contact@burgosmanuel.ar"
+        "icon": "social/mail",
+        "url": "mailto:contact@burgosmanuel.ar",
+        "color": "#1D4ED8"
     }
 ]

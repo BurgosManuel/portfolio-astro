@@ -10,23 +10,15 @@ import "../styles/global.css";
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/x-icon" href="favicon.ico" />
 		<slot name="head">
-			<title>Manuel Burgos | Senior Software Engineer</title>			
+			<title>Sergio Manuel Burgos | Senior Software Engineer</title>
 		</slot>
 		<ClientRouter />
 	</head>
-	<body>
-		<Header/>
-		<slot />
-		<slot name="footer" />
+	<body id="top" class="py-8 px-4 sm:px-6">
+		<div class="max-w-2xl mx-auto space-y-8">
+			<Header />
+			<slot />
+			<slot name="footer" />
+		</div>
 	</body>
 </html>
-
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-		padding-top: 25px;
-	}
-</style>

@@ -1,19 +1,23 @@
 ---
-interface Props extends Education {};
+interface Props extends Education {}
 
 const { institution, period, degree, description }: Props = Astro.props;
 ---
-<article>
-        <header class="flex flex-col items-left gap-3 justify-between flex-wrap sm:flex-row sm:items-center">
-            <aside>
-                <h3 class="font-semibold">{institution}</h3>
-                <p class="text-sm font-light">{degree}</p>
-            </aside>
-            <p class="text-sm">{period}</p>
-        </header>
-        <ul class="mt-3 list-disc pl-5">
+<article class="nb-card p-5">
+    <header class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <aside>
+            <h3 class="text-base font-bold">{institution}</h3>
+            <p class="text-sm mt-0.5" style="color: var(--nb-muted);">{degree}</p>
+        </aside>
+        <span class="nb-badge text-xs px-2.5 py-1 self-start sm:self-center shrink-0">
+            {period}
+        </span>
+    </header>
+    {description.length > 0 && (
+        <ul class="mt-3 space-y-2 text-sm leading-relaxed list-disc pl-5" style="color: var(--nb-muted);">
             {description.map((desc) => (
-                <li class="py-2">{desc}</li>
+                <li>{desc}</li>
             ))}
         </ul>
+    )}
 </article>
